@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on 煌兄の大看板！</title>
+    <link>https://www.whing.cn/bbs/page/</link>
+    <description>Recent content in Pages on 煌兄の大看板！</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 11 Nov 2020 13:17:56 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.whing.cn/bbs/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>首页</title>
+      <link>https://www.whing.cn/bbs/page/0/</link>
+      <pubDate>Wed, 11 Nov 2020 13:17:56 +0100</pubDate>
+      
+      <guid>https://www.whing.cn/bbs/page/0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>我的博客</title>
+      <link>https://www.whing.cn/bbs/page/1/</link>
+      <pubDate>Tue, 10 Nov 2020 13:17:56 +0100</pubDate>
+      
+      <guid>https://www.whing.cn/bbs/page/1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>我的笔记</title>
+      <link>https://www.whing.cn/bbs/page/2/</link>
+      <pubDate>Sun, 01 Nov 2020 13:17:56 +0100</pubDate>
+      
+      <guid>https://www.whing.cn/bbs/page/2/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

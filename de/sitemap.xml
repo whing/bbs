@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/de/author/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.whing.cn/bbs/author/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://www.whing.cn/bbs/de/author/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/de/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.whing.cn/bbs/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://www.whing.cn/bbs/de/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/de/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.whing.cn/bbs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://www.whing.cn/bbs/de/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/de/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.whing.cn/bbs/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://www.whing.cn/bbs/de/series/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/de/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.whing.cn/bbs/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://www.whing.cn/bbs/de/tags/"
+                />
+  </url>
+  
+</urlset>

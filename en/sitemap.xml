@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/page/</loc>
+    <lastmod>2020-11-11T13:17:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/</loc>
+    <lastmod>2020-11-11T13:17:56+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://www.whing.cn/bbs/de/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.whing.cn/bbs/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/page/0/</loc>
+    <lastmod>2020-11-11T13:17:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/page/1/</loc>
+    <lastmod>2020-11-10T13:17:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/page/2/</loc>
+    <lastmod>2020-11-01T13:17:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/status/20210809-1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/status/20210809-2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/status/20210809-3/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/status/20210809-4/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/status/20210809-5/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/status/20210809-6/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/status/20210809-7/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/status/20210809-8/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/status/20210809-9/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/status/999999997/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/status/999999998/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/status/999999999/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/author/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://www.whing.cn/bbs/de/author/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.whing.cn/bbs/author/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://www.whing.cn/bbs/de/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.whing.cn/bbs/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://www.whing.cn/bbs/de/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.whing.cn/bbs/series/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/status/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.whing.cn/bbs/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://www.whing.cn/bbs/de/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.whing.cn/bbs/tags/"
+                />
+  </url>
+  
+</urlset>
