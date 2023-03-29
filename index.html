@@ -3,21 +3,20 @@ layout: default
 ---
 
 <div class="container row">
-    <!-- <h1 class="cv-title"><span class="black white-text">{{ site.title }}</span></h1> -->
-    <div id="content"></div>
+    
+    <div class="content">
     <script>
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-    if(isMobile){
-      const mobileContent = document.createElement('h1');
-      mobileContent.textContent = "欢迎访问移动端页面";
-      document.getElementById('content').appendChild(mobileContent);
-    } else {
-      const webContent = document.createElement('h1');
-      webContent.textContent = "欢迎访问Web端页面";
-      document.getElementById('content').appendChild(webContent);
-    }
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      if(isMobile){
+        const mobileHtml = '<h1 class="cv-title"><span class="black white-text">{{ site.title }}</span></h1>';
+        document.querySelector('.content').innerHTML = mobileHtml;
+      } else {
+        const webHtml = '<h3 class="cv-title"><span class="black white-text">{{ site.title }}</span></h3>';
+        document.querySelector('.content').innerHTML = webHtml;
+      }
     </script>
+    
+    <!-- <h1 class="cv-title"><span class="black white-text">{{ site.title }}</span></h1> -->
     {% assign posts = site.steps | sort: 'date' %}
     {% for step in posts %}
     <div class="item">
