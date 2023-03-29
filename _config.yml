@@ -4,8 +4,8 @@ timezone: Asia/Shanghai
 collections:
   posts:
     title: Posts
-    # output: true
-    output: false
+    output: true
+    # output: false
   steps:
     title: Steps
     output: false
