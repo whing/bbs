@@ -8,10 +8,10 @@ layout: default
     <script>
       const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       if(isMobile){
-        const mobileHtml = '<h1 class="cv-title"><span class="black white-text">{{ site.title }}</span></h1>';
+        const mobileHtml = '<h4 class="cv-title"><span class="black white-text">{{ site.title }}</span></h4>';
         document.querySelector('.content').innerHTML = mobileHtml;
       } else {
-        const webHtml = '<h3 class="cv-title"><span class="black white-text">{{ site.title }}</span></h3>';
+        const webHtml = '<h1 class="cv-title"><span class="black white-text">{{ site.title }}</span></h1>';
         document.querySelector('.content').innerHTML = webHtml;
       }
     </script>
