@@ -6,16 +6,13 @@ layout: default
     <!-- <h1 class="cv-title"><span class="black white-text">{{ site.title }}</span></h1> -->
     <div id="content"></div>
     <script>
-    // 检查userAgent是否包含以下移动设备字符串
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
     if(isMobile){
-      // 移动端代码
       const mobileContent = document.createElement('h1');
       mobileContent.textContent = "欢迎访问移动端页面";
       document.getElementById('content').appendChild(mobileContent);
     } else {
-      // web端代码
       const webContent = document.createElement('h1');
       webContent.textContent = "欢迎访问Web端页面";
       document.getElementById('content').appendChild(webContent);
