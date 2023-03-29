@@ -6,7 +6,8 @@ collections:
     title: Posts
     output: false
   steps:
-    title: Steps
+    # title: Steps
+    title: Posts
     output: true
   uploads:
     title: Uploads
