@@ -4,10 +4,12 @@ timezone: Asia/Shanghai
 collections:
   posts:
     title: Posts
-    output: true
+    # output: true
+    output: false
   steps:
     title: Steps
-    output: false
+    # output: false
+    output: true
   uploads:
     title: Uploads
     output: true
