@@ -5,11 +5,9 @@ collections:
   posts:
     title: Posts
     output: true
-    # output: false
   steps:
     title: Steps
     output: false
-    # output: true
   uploads:
     title: Uploads
     output: true
@@ -17,7 +15,6 @@ defaults:
 - scope:
     path: ''
     type: steps
-    # type: posts
   values:
     title: 
     date: 2016-09-01 00:00:00 -0700
