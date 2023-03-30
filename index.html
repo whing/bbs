@@ -8,7 +8,7 @@ layout: default
     <script>
       const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       if(isMobile){
-        const mobileHtml = '<h5 class="cv-title"><span class="black white-text">{{ site.minititle }}</span></h5>';
+        const mobileHtml = '<h4 class="cv-title"><span class="black white-text">{{ site.minititle }}</span></h4>';
         document.querySelector('.content').innerHTML = mobileHtml;
       } else {
         const webHtml = '<h1 class="cv-title"><span class="black white-text">{{ site.title }}</span></h1>';
