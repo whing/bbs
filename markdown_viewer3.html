@@ -72,10 +72,12 @@
             max-width: 200px;
             overflow-y: auto;
             max-height: 80vh;
-            transition: right 0.3s ease;
+            transition: right 0.3s ease, opacity 0.3s ease; /* Add opacity transition */
+            opacity: 0; /* Start with transparent */
         }
         #toc.visible {
             right: 20px;
+            opacity: 1; /* Fully opaque when visible */
         }
         #toc ul {
             list-style: none;
