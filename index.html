@@ -1,36 +1,470 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marquee List Showcase</title>
+    <!-- <style> -->
+        <!-- body { -->
+            <!-- margin: 0; -->
+            <!-- padding: 0; -->
+            <!-- font-family: 'Arial', sans-serif; -->
+            <!-- background-color: #f7f7f7; -->
+        <!-- } -->
+        <!-- .container { -->
+            <!-- display: flex; -->
+            <!-- flex-wrap: wrap; -->
+            <!-- gap: 20px; -->
+            <!-- max-width: 1000px; -->
+            <!-- margin: 40px auto; -->
+            <!-- padding: 20px; -->
+        <!-- } -->
+        <!-- .section { -->
+            <!-- flex: 1 1 300px; -->
+            <!-- margin-bottom: 20px; -->
+			<!-- margin-right: 20px; -->
+            <!-- background-color: #ffffff; -->
+            <!-- border-radius: 8px; -->
+            <!-- box-shadow: 0 2px 5px rgba(0,0,0,0.1); -->
+			<!-- padding-bottom: 10px; -->
+        <!-- } -->
+        <!-- .section-title { -->
+            <!-- text-align: center; -->
+            <!-- font-size: 20px; -->
+            <!-- margin: 10px 0; -->
+            <!-- color: #333; -->
+        <!-- } -->
+        <!-- .links-list { -->
+            <!-- list-style-type: none; -->
+            <!-- margin: 0; -->
+            <!-- padding: 0; -->
+        <!-- } -->
+		<!-- .links-list-item { -->
+            <!-- display: flex; -->
+            <!-- align-items: center; -->
+            <!-- padding: 10px; -->
+            <!-- margin: 5px 0; -->
+            <!-- background-color: #ffffff;  -->
+            <!-- border-radius: 4px; -->
+            <!-- overflow: hidden; -->
+            <!-- position: relative; -->
+        <!-- } -->
+        <!-- .links-list-item a { -->
+            <!-- text-decoration: none; -->
+            <!-- color: #1a0dab; -->
+            <!-- display: inline-block; -->
+            <!-- white-space: nowrap; -->
+            <!-- overflow: hidden; -->
+            <!-- text-overflow: ellipsis; -->
+            <!-- transition: transform 0.3s ease; -->
+            <!-- position: absolute; -->
+            <!-- width: 100%; -->
+        <!-- } -->
+        <!-- .links-list-item:hover a { -->
+            <!-- transform: translateX(-100%); -->
+            <!-- animation: marquee 5s linear infinite; -->
+        <!-- } -->
+        <!-- @keyframes marquee { -->
+            <!-- from { transform: translateX(0); } -->
+            <!-- to { transform: translateX(-200%); } -->
+        <!-- } -->
+    <!-- </style> -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+        }
+		
+		/* Banner样式 */
+		<!-- .banner { -->
+			<!-- background-color: #333; -->
+			<!-- color: #fff; -->
+			<!-- padding: 10px 20px; -->
+			<!-- text-align: center; -->
+			<!-- position: relative; -->
+		<!-- } -->
+		<!-- #directory-toggle-button { -->
+			<!-- display: block; /* 默认目录按钮 */ -->
+			<!-- position: absolute; -->
+			<!-- top: 10px; -->
+			<!-- right: 20px; -->
+			<!-- padding: 5px 10px; -->
+			<!-- background: #1a0dab; -->
+			<!-- color: white; -->
+			<!-- border: none; -->
+			<!-- border-radius: 5px; -->
+			<!-- cursor: pointer; -->
+		<!-- } -->
+        .banner {
+            background-color: #333;
+            color: #fff;
+            display: flex; /* 使用Flexbox */
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+            padding: 10px 20px;
+            position: relative;
+        }
+        #directory-toggle-button {
+            display: block; /* 默认开启目录按钮 */
+            padding: 5px 10px;
+            background: #1a0dab;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            right: 20px; /* 位于右侧 */
+        }
+		
+		.banner .title {
+			/* 默认字体大小适用于PC端 */
+			<!-- font-size: 2em; /* 或者使用像素值，如 32px */ -->
+			font-size: 1em;
+			font-weight: bold; /* 文字加粗 */
+		}
+		
+		/* 目录样式 */
+		.directory {
+            display: None; /* 默认不显示目录 */
+            position: fixed;
+            top: 41px;
+            right: 0px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
 
-<div class="container row">
-    
-    <div class="content">
-    <script>
-      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-      if(isMobile){
-        const mobileHtml = '<h4 class="cv-title"><span class="black white-text">{{ site.minititle }}</span></h4>';
-        document.querySelector('.content').innerHTML = mobileHtml;
-      } else {
-        const webHtml = '<h1 class="cv-title"><span class="black white-text">{{ site.title }}</span></h1>';
-        document.querySelector('.content').innerHTML = webHtml;
-      }
-    </script>
-    
-    <!-- <h1 class="cv-title"><span class="black white-text">{{ site.title }}</span></h1> -->
-    {% assign posts = site.steps | sort: 'date' | reverse %}
-    {% for step in posts %}
-    <div class="item">
-        <i class="vertical-line"></i>
-        <h5 class="item-date">{{ step.date | date: '%Y - %m - %d' }} 发布：</h5>
-        <div class="card-panel">
-            <p>
-                {{ step.content }}
-            </p>
-        </div>
+        .directory ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .directory a {
+			display: block;
+            text-decoration: none;
+            color: black;
+			margin: 5px auto;
+        }
+		.directory span.number {
+			display: inline-block;
+			width: 2em; /* 根据最大数字长度调整宽度 */
+			text-align: right; /* 右对齐数字 */
+			font-family: 'Courier New', Courier, monospace; /* 等宽字体 */
+		}
+
+        <!-- .container { -->
+            <!-- column-count: 3; /* Number of columns */ -->
+            <!-- column-gap: 20px; /* Gap between columns */ -->
+            <!-- max-width: 1000px; -->
+            <!-- margin: 40px auto; -->
+            <!-- padding: 20px; -->
+        <!-- } -->
+		.container {
+			column-gap: 20px; /* 列间隙 */
+			margin: 40px auto;
+			<!-- padding: 20px; -->
+			/* 默认为单列布局 */
+			column-count: 1;
+			padding: 0 20px 0 20px;
+		}
+
+		/* 小屏幕设备（如手机） */
+		@media (min-width: 480px) {
+			.container {
+				column-count: 1; /* 两列布局 */
+				padding: 0 50px 0 50px;
+			}
+			.directory {
+                top: 45px;
+            }
+			.banner .title {
+				font-size: 1.2em; /* 调整为较小的字体大小 */
+				font-weight: bold; /* 文字加粗 */
+        }
+		}
+		/* 小屏幕设备（如手机） */
+		@media (min-width: 540px) {
+			.container {
+				column-count: 1; /* 两列布局 */
+				padding: 0 100px 0 100px;
+			}
+			.directory {
+                top: 51px;
+            }
+			.banner .title {
+				font-size: 1.5em; /* 调整为较小的字体大小 */
+				font-weight: bold; /* 文字加粗 */
+		}
+		}
+		/* 小屏幕设备（如手机） */
+		@media (min-width: 720px) {
+			.container {
+				column-count: 2; /* 两列布局 */
+				padding: 0 20px 0 20px;
+			}
+			.directory {
+                display: none; /* 在单列布局时显示目录 */
+				top: 72px;
+            }
+			#directory-toggle-button {
+				display: none;
+			}
+			.banner .title {
+				font-size: 2em; /* 调整为较小的字体大小 */
+				font-weight: bold; /* 文字加粗 */
+				margin: 5px auto;
+		}
+		}
+		/* 中等屏幕设备（如平板） */
+		@media (min-width: 1080px) {
+			.container {
+				column-count: 3; /* 三列布局 */
+				padding: 0 50px 0 50px;
+			}
+			.directory {
+                display: none; /* 在单列布局时显示目录 */
+				top: 82px;
+            }
+			#directory-toggle-button {
+				display: none;
+			}
+			.banner .title {
+				font-size: 2.5em; /* 调整为较小的字体大小 */
+				font-weight: bold; /* 文字加粗 */
+				margin: 5px auto;
+		}
+		}
+
+		/* 大屏幕设备（如桌面显示器） */
+		@media (min-width: 1366px) {
+			.container {
+				column-count: 4; /* 四列布局 */
+				padding: 0 100px 0 100px;
+			}
+			.directory {
+                display: none; /* 在单列布局时显示目录 */
+				top: 94px;
+            }
+			#directory-toggle-button {
+				display: none;
+			}
+			.banner .title {
+				font-size: 3em; /* 调整为较小的字体大小 */
+				font-weight: bold; /* 文字加粗 */
+				margin: 5px auto;
+		}
+		}
+
+		<!-- /* 更大屏幕设备 */ -->
+		<!-- @media (min-width: 1200px) { -->
+			<!-- .container { -->
+				<!-- column-count: 5; /* 五列布局 */ -->
+			<!-- } -->
+		<!-- } -->
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            display: inline-block;
+            width: 100%; /* Full width of the column */
+            padding-bottom: 10px;
+            break-inside: avoid; /* Prevents breaking within the item */
+        }
+        .section-title {
+            text-align: center;
+            font-size: 20px;
+            margin: 10px 0;
+            color: #333;
+        }
+        .links-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .links-list-item {
+            padding: 10px;
+            <!-- background-color: #f0f0f0; -->
+            border-radius: 4px;
+            margin: 5px;
+        }
+        <!-- .links-list-item a { -->
+            <!-- text-decoration: none; -->
+            <!-- color: #1a0dab; -->
+            <!-- display: block; -->
+            <!-- overflow: hidden; -->
+            <!-- white-space: nowrap; -->
+            <!-- text-overflow: ellipsis; -->
+        <!-- } -->
+        <!-- .links-list-item:hover a { -->
+            <!-- color: red; -->
+            <!-- white-space: normal; -->
+            <!-- overflow: visible; -->
+        <!-- } -->
+		.links-list-item a {
+			text-decoration: none;
+			color: black;
+			display: block;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+		.links-list-item:hover a {
+			color: red; /* 文字变红 */
+			font-weight: bold; /* 文字加粗 */
+			white-space: normal; /* 允许文本换行 */
+			overflow: visible; /* 显示溢出容器的文本 */
+		}
+		
+		
+    </style>
+
+</head>
+<body>
+    <!-- Banner -->
+    <div class="banner">
+        <!-- <h1>网站标题</h1> -->
+		<div class="title">网站标题</div>
+        <!-- 目录按钮 -->
+        <button id="directory-toggle-button">目录</button>
     </div>
-    {% endfor %}
-    <div class="last-item">
-        <i class="vertical-line"></i>
-        
+	
+	<div class="directory" id="directory">
+		<ul>
+        <!-- 目录项将通过JavaScript动态添加 -->
+		</ul>
+	</div>	
+
+    <div class="container" id="markdown-content">
+        <div class="loading">Loading...</div>
     </div>
-    </div>
+
+	
+	<script>
+	
+	// 当文档加载完成后初始化目录按钮事件
+	document.addEventListener('DOMContentLoaded', function() {
+		var directory = document.getElementById('directory');
+		var toggleButton = document.getElementById('directory-toggle-button');
+		toggleButton.addEventListener('click', function() {
+			// 显示或隐藏目录
+			if (directory.style.display === 'block') {
+				directory.style.display = 'none';
+			} else {
+				directory.style.display = 'block';
+			}
+		});
+
+		// 调用生成目录的函数
+		<!-- generateDirectory(); -->
+	});
+	
+    // 解析Markdown内容并动态添加到页面上
+    function parseMarkdown(markdown) {
+        const sectionRegex = /###\s+(.+)(\n- \[.+\]\(.+\))+/g;
+        const listItemRegex = /\n- \[(.+)\]\((.+)\)/g;
+
+        let htmlContent = '';
+
+        let sectionMatch;
+        while ((sectionMatch = sectionRegex.exec(markdown)) !== null) {
+            const sectionTitle = sectionMatch[1];
+            const listItems = sectionMatch[0];
+
+            let listHtml = '<ul class="links-list">';
+            let listItemMatch;
+            <!-- while ((listItemMatch = listItemRegex.exec(listItems)) !== null) { -->
+                <!-- const [ , text, url ] = listItemMatch; -->
+                <!-- listHtml += `<li class="links-list-item"><a href="${url}" target="_blank"> ・ ${text}</a></li>`; -->
+            <!-- } -->
+			while ((listItemMatch = listItemRegex.exec(listItems)) !== null) {
+				const [, text, url] = listItemMatch;
+				// 检查是否是Markdown文件
+				const isMarkdown = url.endsWith('.md');
+				// 根据文件类型设置不同的href属性
+				<!-- const hrefValue = isMarkdown ? `markdown_viewer.html?url=${encodeURIComponent(url)}` : url; -->
+				const hrefValue = isMarkdown ? `markdown_viewer2.html?url=${encodeURIComponent(url)}` : url;
+				listHtml += `<li class="links-list-item"><a href="${hrefValue}" target="_blank">・${text}</a></li>`;
+			}
+            listHtml += '</ul>';
+
+            htmlContent += `<div class="section">
+                                <h2 class="section-title">${sectionTitle}</h2>
+                                ${listHtml}
+                            </div>`;
+        }
+
+        document.getElementById('markdown-content').innerHTML = htmlContent;
+        generateDirectory(); // 确保在内容加载后生成目录
+    }
+
+    // 从远程Markdown文件获取内容
+    const markdownUrl = 'https://www.whing.cn/README.md';
+
+    fetch(markdownUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(parseMarkdown)
+        .catch(error => {
+            console.error('Error fetching Markdown:', error);
+            document.getElementById('markdown-content').innerHTML = `<div class="loading">Error loading content.</div>`;
+        });
+
+    // 生成目录
+    function generateDirectory() {
+        var sections = document.querySelectorAll('.section');
+        var directoryList = document.getElementById('directory').querySelector('ul');
+        directoryList.innerHTML = ''; // 清空目录列表
+
+        // 确定最大序号的位数
+        var maxNumberLength = String(sections.length).length;
+
+        sections.forEach(function(section, index) {
+            var title = section.querySelector('.section-title').textContent;
+            var listItem = document.createElement('li');
+            var anchor = document.createElement('a');
+            anchor.href = `#section${index + 1}`;
+
+            // 补足位数
+            var numberString = String(index + 1);
+            var paddedNumberString = numberString.padStart(maxNumberLength, ' ');
+
+            // 创建序号的span元素
+            var numberSpan = document.createElement('span');
+            numberSpan.className = 'number';
+            numberSpan.textContent = `${paddedNumberString}.`;
+
+            // 创建标题的span元素
+            var titleSpan = document.createElement('span');
+            titleSpan.textContent = ` ${title}`;
+
+            // 将span元素添加到锚点元素
+            anchor.appendChild(numberSpan);
+            anchor.appendChild(titleSpan);
+
+            anchor.onclick = function(e) {
+                e.preventDefault();
+                <!-- section.scrollIntoView({ behavior: 'smooth' }); -->
+				// 为了兼容所有浏览器，使用 'scrollIntoView' 代替 'behavior: smooth'
+				section.scrollIntoView();
+            };
+            listItem.appendChild(anchor);
+            directoryList.appendChild(listItem);
+        });
+    }
+
+    // 当文档加载完成后生成目录
+    document.addEventListener('DOMContentLoaded', generateDirectory);
+	</script>
+	
+</body>
+</html>

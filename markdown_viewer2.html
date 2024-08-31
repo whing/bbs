@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Markdown Viewer</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <!-- MathJax configuration -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\$(', '\)$']],
+          displayMath: [['$$', '$$'], ['\$[', '\]$']],
+          processEscapes: true,
+          tags: 'ams'
+        },
+        svg: {
+          fontCache: 'global'
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+          ignoreHtmlClass: 'tex2jax_ignore',
+          processHtmlClass: 'tex2jax_process'
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+        #book {
+            width: 60%;
+            max-width: 800px;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        #content {
+            text-align: justify;
+        }
+        p {
+            text-indent: 2em;
+            margin: 1em 0;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 66.67%;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            text-align: center;
+            margin-top: 1.5em;
+            margin-bottom: 1em;
+        }
+        #toc {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 200px;
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+        #toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        #toc li {
+            margin: 5px 0;
+        }
+        #toc a {
+            text-decoration: none;
+            color: #3498db;
+        }
+        #toc a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="book">
+        <div id="content">Loading...</div>
+    </div>
+    <div id="toc">
+        <strong>目录</strong>
+        <ul id="toc-list"></ul>
+    </div>
+    <script>
+        window.onload = function() {
+            // 从URL参数中获取Markdown文件的URL
+            const params = new URLSearchParams(window.location.search);
+            const markdownUrl = params.get('url');
+
+            // 提取URL前缀的函数
+            function getPrefix(url) {
+                const urlParts = url.split('/');
+                urlParts.pop(); // 移除文件名部分
+                return urlParts.join('/') + '/';
+            }
+
+            // 获取文件名的函数
+            function getFileName(url) {
+                const urlParts = url.split('/');
+                return urlParts.pop().split('.')[0]; // 获取文件名并去掉扩展名
+            }
+
+            // 处理HTML中的图片链接
+            function processImageLinks(html, prefix) {
+                return html.replace(/<img\s+[^>]*src="([^"]+)"[^>]*>/g, (match, src) => {
+                    if (!src.startsWith('http://') && !src.startsWith('https://')) {
+                        src = prefix + src;
+                    }
+                    return match.replace(/src="[^"]+"/, `src="${src}"`);
+                });
+            }
+
+            // 生成目录
+            function generateTOC() {
+                const tocList = document.getElementById('toc-list');
+                const headers = document.querySelectorAll('#content h1, #content h2, #content h3, #content h4, #content h5, #content h6');
+                headers.forEach(header => {
+                    const link = document.createElement('a');
+                    const listItem = document.createElement('li');
+                    const id = header.innerText.replace(/\s+/g, '-').toLowerCase();
+                    header.id = id;
+                    link.href = `#${id}`;
+                    link.innerText = header.innerText;
+                    listItem.appendChild(link);
+                    tocList.appendChild(listItem);
+                });
+            }
+
+            // 如果URL参数存在，则开始获取和转换Markdown内容
+            if (markdownUrl) {
+                const prefix = getPrefix(markdownUrl); // 获取前缀
+                const fileName = getFileName(markdownUrl); // 获取文件名
+
+                fetch(markdownUrl)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.text();
+                    })
+                    .then(markdown => {
+                        // 检查Markdown内容中是否有标题
+                        const titleMatch = markdown.match(/^(#{1,6})\s+(.*)$/m);
+                        const hasTitle = titleMatch !== null;
+                        const firstTitle = hasTitle ? titleMatch[2] : '';
+
+                        if (!hasTitle || firstTitle !== fileName) {
+                            // 如果没有标题，或者标题和文件名不一样，添加文件名作为标题
+                            markdown = `# ${fileName}\n\n` + markdown;
+                        }
+
+                        return marked.parse(markdown); // 将Markdown转换为HTML
+                    })
+                    .then(htmlContent => processImageLinks(htmlContent, prefix)) // 处理图片链接
+                    .then(finalHtmlContent => {
+                        document.getElementById('content').innerHTML = finalHtmlContent;
+                        generateTOC(); // 生成目录
+                        MathJax.typesetPromise(); // 渲染数学公式
+                    })
+                    .catch(error => {
+                        console.error('Error fetching Markdown:', error);
+                        document.getElementById('content').innerHTML = 'Error loading Markdown content.';
+                    });
+            } else {
+                document.getElementById('content').innerHTML = 'No Markdown URL provided.';
+            }
+        };
+    </script>
+</body>
+</html>
