@@ -65,7 +65,7 @@
         #toc {
             position: fixed;
             top: 20px;
-            right: -220px; /* Hide initially */
+            right: -240px; /* Hide initially */
             background: white;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -121,6 +121,9 @@
                 right: 10px;
                 padding: 5px;
             }
+            #toc {
+                right: -220px; /* Ensure TOC is completely hidden */
+            }
         }
         @media (max-width: 480px) {
             body {
@@ -134,6 +137,9 @@
             }
             p {
                 text-indent: 1em;
+            }
+            #toc {
+                right: -220px; /* Ensure TOC is completely hidden */
             }
         }
     </style>
