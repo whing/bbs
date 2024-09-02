@@ -37,4 +37,14 @@ Homepage：https://www.whing.cn/bbs
 
 ### 在线工具
 - [Flow - 在线 EPUB 阅读器](https://www.flowoss.com/zh-CN)
-- 
+
+### 知乎精选
+- [AIGC - 郭达森](https://www.zhihu.com/column/c_1625207909599617024)
+- [AI模型部署流程介绍](https://www.zhihu.com/column/c_1537517607992750080)
+- [十分钟理解Transformer](https://zhuanlan.zhihu.com/p/82312421)
+- [NLP中的RNN、Seq2Seq与attention注意力机制](https://zhuanlan.zhihu.com/p/52119092)
+- [Transformer学习笔记一：Positional Encoding（位置编码）](https://zhuanlan.zhihu.com/p/454482273)
+
+### ChatGPT
+- [Azure OpenAI 服务模型](https://learn.microsoft.com/zh-cn/azure/ai-services/openai/concepts/models#%E6%9C%AC%E6%96%87%E5%86%85%E5%AE%B9)
+- [ChatGPT进化的秘密](https://juejin.cn/post/7181405978447839269)
