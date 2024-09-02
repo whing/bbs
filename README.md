@@ -23,6 +23,7 @@ Homepage：https://www.whing.cn/bbs
 
 ### 兴趣收藏
 - [黑神话悟空妖怪平生录](https://raw.githubusercontent.com/meethigher/black-wukong-youji/master/黑神话悟空妖怪平生录.md)
+- [山海经知识库](http://shj.nlc.cn/)
 
 ### SD绘图
 - [Creating Hairstyles with SDXL](https://civitai.com/articles/4103/creating-hairstyles-with-sdxl)
@@ -33,3 +34,7 @@ Homepage：https://www.whing.cn/bbs
 
 ### Demo
 - [ConsistentID-huggingface](https://huggingface.co/spaces/JackAILab/ConsistentID)
+
+### 在线工具
+- [Flow - 在线 EPUB 阅读器](https://www.flowoss.com/zh-CN)
+- 
