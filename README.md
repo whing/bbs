@@ -13,11 +13,13 @@ Homepage：https://www.whing.cn/bbs
 - [Diffusers](https://github.com/huggingface/diffusers)
 - [Diffusers - Docs](https://huggingface.co/docs/diffusers/main/en/index)
 - [DiffSynth Studio](https://github.com/modelscope/DiffSynth-Studio)
+- [FRESCO](https://github.com/williamyang1991/fresco)
 - [书生-筑梦](https://github.com/Vchitect)
 - [OpenGVLab](https://github.com/OpenGVLab)
 - [HuggingFace/fffiloni](https://huggingface.co/fffiloni/activity/all)
 - [HuggingFace/briaai](https://huggingface.co/briaai)
 - [HuggingFace/ntc-ai](https://huggingface.co/ntc-ai)
+- [HuggingFace/stablediffusionapi](https://huggingface.co/stablediffusionapi)
 - [PIXART-α](https://pixart-alpha.github.io/)
 - [ModelScope/InstantID](https://modelscope.cn/models/instantx/InstantID/summary)
 
