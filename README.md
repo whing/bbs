@@ -6,6 +6,21 @@ Homepage：https://www.whing.cn/bbs
 ### 随心笔记
 - [人性铁律](docs/人性铁律.md)
 
+### Project Follow
+- [InsightFace: 2D and 3D Face Analysis Project](https://github.com/deepinsight/insightface)
+- [Transformers](https://github.com/huggingface/transformers)
+- [Transformers - Readme](https://github.com/huggingface/transformers/blob/main/i18n/README_zh-hans.md)
+- [Diffusers](https://github.com/huggingface/diffusers)
+- [Diffusers - Docs](https://huggingface.co/docs/diffusers/main/en/index)
+- [DiffSynth Studio](https://github.com/modelscope/DiffSynth-Studio)
+- [书生-筑梦](https://github.com/Vchitect)
+- [OpenGVLab](https://github.com/OpenGVLab)
+- [HuggingFace/fffiloni](https://huggingface.co/fffiloni/activity/all)
+- [HuggingFace/briaai](https://huggingface.co/briaai)
+- [HuggingFace/ntc-ai](https://huggingface.co/ntc-ai)
+- [PIXART-α](https://pixart-alpha.github.io/)
+- [ModelScope/InstantID](https://modelscope.cn/models/instantx/InstantID/summary)
+
 ### 技术洞察
 - [Large World Model (LWM)](https://raw.githubusercontent.com/LargeWorldModel/LWM/main/README.md)
 - [Awesome Chinese LLM](https://raw.githubusercontent.com/HqWu-HITCS/Awesome-Chinese-LLM/main/README.md)
