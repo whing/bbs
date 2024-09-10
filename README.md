@@ -41,6 +41,7 @@ Homepage：https://www.whing.cn/bbs
 ### 兴趣收藏
 - [黑神话悟空妖怪平生录](https://raw.githubusercontent.com/meethigher/black-wukong-youji/master/黑神话悟空妖怪平生录.md)
 - [山海经知识库](http://shj.nlc.cn/)
+- [FaceSwap使用指南](https://raw.githubusercontent.com/liafuzho/faceswap-doc-cn/master/faceswap-guide-cn.md)
 
 ### SD绘图
 - [Creating Hairstyles with SDXL](https://civitai.com/articles/4103/creating-hairstyles-with-sdxl)
